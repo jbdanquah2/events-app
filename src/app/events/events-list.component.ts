@@ -13,8 +13,6 @@ import { ToastrService } from '../common/toastr.service';
           <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
           </div>
         </div>
-
-        
     </div>
 `
 })
