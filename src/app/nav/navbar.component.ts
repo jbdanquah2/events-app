@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
-// import { EventEmitter } from 'protractor';
+import { AuthService } from "../user/auth.service";
 
 @Component({
     selector: 'nav-bar',
@@ -10,9 +10,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
         @media (max-width: 820px) {
             #searchForm {display: none}
         }
+        li > a.active { color: #F97924}
     `]
 })
 
 export class NavBarComponent {
-   
+    
+   constructor(public auth:AuthService){
+    console.log(auth);
+    
+   }
 }

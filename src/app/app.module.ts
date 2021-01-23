@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from "./routes";
 
+import { 
+  EventsListComponent,
+  EventThumbnailComponent,
+  EventService,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivatorService
+ } from "./events/index";
 
 import { EventsAppComponent } from './events-app.component';
-import { EventsListComponent } from './events/events-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
-import { EventService } from './events/shared/event.service'
 import { ToastrService } from './common/toastr.service'
-import { EventDetailsComponent } from './events/event-details/event-details.component'
-import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
-import { EventRouteActivatorService } from './events/event-details/event-route-activator.service';
+import {  } from './events/event-details/event-route-activator.service';
+import { AuthService } from './user/auth.service';
 
 
 @NgModule({
@@ -34,6 +38,7 @@ import { EventRouteActivatorService } from './events/event-details/event-route-a
     EventService, 
     ToastrService,
     EventRouteActivatorService,
+    AuthService,
     {provide: 'CanDeactivateCreateEvent',
       useValue: checkDirtyState
     }

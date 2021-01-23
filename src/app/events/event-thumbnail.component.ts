@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
-// import { EventEmitter } from 'protractor';
+import { Component, Input } from '@angular/core'
+import { IEvent } from './shared/event.model';
 
 @Component({
     selector: 'event-thumbnail',
@@ -42,15 +42,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 })
 
 export class EventThumbnailComponent {
-    @Input() event:any;
+    @Input() event:IEvent;
 
     getStartTimeClass() {
-        if (this.event && this.event.time == '8:00 am')
+        if (this.event && this.event.time === '8:00 am')
         return ['green', 'bold'];
     return [];
     }
     getStartPriceStyle() {
-        if (this.event && this.event.price >= '800')
+        if (this.event && this.event.price >= 800)
         return {'color' : '#990000', 'font-weight' : 'bold'}
     return {'color' : '#000099', 'font-weight' : 'bold'}
     }
